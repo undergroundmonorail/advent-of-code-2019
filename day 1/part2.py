@@ -11,4 +11,5 @@ def fuel_for_module(mass):
 	
 	return fuel_running + additional_fuel
 
-with open('input.txt') as f:print(sum(map(fuel_for_module, f.read().split())))
+with open('input.txt') as f:
+	print(sum(map(fuel_for_module, f.read().split())))
