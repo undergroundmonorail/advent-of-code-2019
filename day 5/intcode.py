@@ -109,9 +109,9 @@ class Intcode():
 		
 		def invalid(i):
 			sys.exit(("Invalid instruction reached! Tried to execute instruction {} at memory position {}\n\n" +
-					"Memory dump:\n" +
-					 "{}").format(self.memory[self.ip], self.ip, self.memory))
-					 
+			          "Memory dump:\n" +
+			          "{}").format(self.memory[self.ip], self.ip, self.memory))
+		
 		curr = Instruction(self.memory[self.ip])
 		
 		{
