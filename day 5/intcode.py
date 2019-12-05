@@ -25,7 +25,7 @@ class Mode(Enum):
 class Instruction():
 	def __len__(self):
 		return {
-		         Opcode.ADD     : 4,
+				 Opcode.ADD     : 4,
 				 Opcode.MUL     : 4,
 				 Opcode.IN      : 2,
 				 Opcode.OUT     : 2,
