@@ -45,8 +45,6 @@ class Instruction():
 		self.second_mode = Mode(i % 10)
 		i //= 10
 		self.third_mode = Mode(i % 10)
-	
-	
 
 class Intcode():
 	def __init__(self, memory, queue=None, result=None):
