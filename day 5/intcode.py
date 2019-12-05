@@ -25,17 +25,17 @@ class Mode(Enum):
 class Instruction():
 	def __len__(self):
 		return {
-				 Opcode.ADD     : 4,
-				 Opcode.MUL     : 4,
-				 Opcode.IN      : 2,
-				 Opcode.OUT     : 2,
-				 Opcode.HALT    : 1,
-				 Opcode.TJMP    : 3,
-				 Opcode.FJMP    : 3,
-				 Opcode.LT      : 4,
-				 Opcode.EQUAL   : 4,
-				 Opcode.INVALID : 0,
-			   }[self.opcode]
+		         Opcode.ADD     : 4,
+		         Opcode.MUL     : 4,
+		         Opcode.IN      : 2,
+		         Opcode.OUT     : 2,
+		         Opcode.HALT    : 1,
+		         Opcode.TJMP    : 3,
+		         Opcode.FJMP    : 3,
+		         Opcode.LT      : 4,
+		         Opcode.EQUAL   : 4,
+		         Opcode.INVALID : 0,
+		       }[self.opcode]
 	
 	def __init__(self, i):
 		self.opcode = Opcode(i % 100)
@@ -109,7 +109,7 @@ class Intcode():
 		
 		def invalid(i):
 			sys.exit(("Invalid instruction reached! Tried to execute instruction {} at memory position {}\n\n" +
-			         "Memory dump:\n" +
+					"Memory dump:\n" +
 					 "{}").format(self.memory[self.ip], self.ip, self.memory))
 					 
 		curr = Instruction(self.memory[self.ip])
