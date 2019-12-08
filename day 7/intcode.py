@@ -59,6 +59,10 @@ class Intcode():
 	def run(self):
 		while not self.halted:
 			self.step()
+
+	def run_until_input(self):
+		while not self.halted and (self.queue or Instruction(self.memory[self.ip]).opcode != Opcode.IN):
+			self.step()
 	
 	def step(self):
 		"""Execute the instruction at the instruction pointer"""

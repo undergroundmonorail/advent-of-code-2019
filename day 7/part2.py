@@ -1,17 +1,13 @@
 import itertools
 
 from intcode import *
-
-def run_until_input(i):
-	while not i.halted and (i.queue or Instruction(i.memory[i.ip]).opcode != Opcode.IN):
-		i.step()
 		
 def run_all_until_halted(amps):
 	signal = 0
 	while not amps[0].halted:
 		for amp in amps:
 			amp.queue.append(signal)
-			run_until_input(amp)
+			amp.run_until_input()
 			signal = amp.result.pop(0)
 	return signal
 
