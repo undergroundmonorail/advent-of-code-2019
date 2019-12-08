@@ -20,8 +20,7 @@ with open('input.txt') as f:
 
 def all_inputs():
 	for phases in itertools.permutations(range(5, 10)):
-		a,b,c,d,e = phases
-		amps = (Intcode(memory, [a], []), Intcode(memory, [b], []), Intcode(memory, [c], []), Intcode(memory, [d], []), Intcode(memory, [e], []))
+		amps = tuple(Intcode(memory, [phase], []) for phase in phases)
 		yield run_all_until_halted(amps)
 
 print(max(all_inputs()))
